@@ -5,6 +5,8 @@ module.exports = function (pkg, broccoli) {
     new broccoli.transformers.preprocessors.ES6TemplatePreprocessor({
       extensions: ['hbs', 'handlebars'],
       compileFunction: 'Ember.Handlebars.compile'
+    }),
+    new broccoli.transformers.preprocessors.ES6ArrowPreprocessor({
     })
   ]))
 }

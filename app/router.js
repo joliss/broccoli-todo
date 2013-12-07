@@ -9,3 +9,8 @@ Router.map(function() {
 });
 
 export default Router;
+
+
+setTimeout(function () {
+  console.error((n => n * 2))
+}, 100)
