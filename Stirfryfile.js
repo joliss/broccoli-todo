@@ -1,8 +1,8 @@
 module.exports = function (broccoli) {
-  var mainPackage = broccoli.helpers.loadBroccoliPackage('.') // improve API
+  var mainPackages = broccoli.readers.Package.fromDirectory('.') // improve API
   var bowerPackages = broccoli.readers.bowerPackages('vendor')
 
-  var packages = [mainPackage].concat(bowerPackages)
+  var packages = mainPackages.concat(bowerPackages)
   var packageReader = new broccoli.readers.PackageReader(packages)
 
   var compilerCollection = new broccoli.transformers.compilers.CompilerCollection({

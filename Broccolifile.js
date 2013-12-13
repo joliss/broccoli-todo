@@ -1,12 +1,13 @@
-module.exports = function (pkg, broccoli) {
-  pkg.setAssetDirectory('app')
-  pkg.setTargetDirectory('appkit')
+module.exports = function (factory, broccoli) {
+  var pkg = factory.makePackage()
+    .map({
+      'app': '/appkit'
+    })
   pkg.setTransformer(new broccoli.transformers.preprocessors.PreprocessorPipeline([
     new broccoli.transformers.preprocessors.ES6TemplatePreprocessor({
       extensions: ['hbs', 'handlebars'],
       compileFunction: 'Ember.Handlebars.compile'
-    }),
-    new broccoli.transformers.preprocessors.ES6ArrowPreprocessor({
     })
   ]))
+  return [pkg]
 }
