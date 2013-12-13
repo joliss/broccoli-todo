@@ -1,7 +1,6 @@
+// routes/todos/index.js
 export default Ember.Route.extend({
   model: function() {
-    return {
-      name: "rebmE"
-    };
+    return this.modelFor('todos');
   }
 });

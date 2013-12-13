@@ -1,5 +1,6 @@
+// routes/todos.js
 export default Ember.Route.extend({
   model: function() {
-    return ['purple', 'green', 'orange'];
+    return this.store.find('todo');
   }
 });
